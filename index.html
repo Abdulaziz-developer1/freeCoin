@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div class="menu">
+        <button onclick="toggleMenu()">☰</button>
+        <div id="menu-content">
+            <button class="menu-btn" onclick="confirmDeleteProgress()">Delete Progress</button>
+            <button class="menu-btn" onclick="showInstructions()">How to Play</button>
+        </div>
+    </div>
+
+    <div class="bg">
+        <div class="center">
+            <div id="number">0</div>
+            <div onclick="clicker()" id="click"></div>
+            <div class="boost-container">
+                <div onclick="boost1()" class="boost" id="boost1"><p>+2</p><p>100 coins</p></div>
+                <div onclick="boost2()" class="boost" id="boost2"><p>+3</p><p>150 coins</p></div>
+                <div onclick="boost3()" class="boost" id="boost3"><p>+4</p><p>200 coins</p></div>
+                <div onclick="max()" id="max" class="boost"><p>Max Points</p></div>
+            </div>
+            <p id="times"></p>
+        </div>
+    </div>
+
+    <div id="delete-popup" class="popup">
+        <div class="popup-content">Do you really want to delete your progress? Once deleted, it cannot be restored.</div>
+        <div class="popup-buttons">
+            <button class="confirm-btn" onclick="deleteProgress()">Yes</button>
+            <button class="cancel-btn" onclick="closePopup()">No</button>
+        </div>
+    </div>
+
+    <div id="instructions-popup" class="popup">
+        <div class="popup-content">Click the gold circle to earn points. Buy boosts to increase points per click.</div>
+        <div class="popup-buttons">
+            <button class="cancel-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
